@@ -1,0 +1,15 @@
+newcpp() {
+	if [[ $# -ne 1 ]]; then
+		echo "Usage: newcpp NAME"
+		return 1
+	fi
+	if [[ "$1" == "run" || "$1" == "tests" || "$1" == "check" || "$1" == "bin" ]]; then
+		echo "NAME cannot be 'bin', 'check', 'run' or 'tests'."
+		return 1
+	fi
+	mkdir "$1"
+	cd "$1"
+	~/bin/_newcpp.sh $1
+	return 0
+}
+
