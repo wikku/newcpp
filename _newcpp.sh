@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 filename="$1.cpp"
 editor="konsole -e vim"
 makefiletemplate="CXXFLAGS=-Wall -Wextra -Werror=format -Werror=return-type -Werror=uninitialized -fsanitize=undefined -g
@@ -21,7 +22,7 @@ int main() {
 	return 0;
 }
 '
-checktemplate='#!/bin/bash
+checktemplate='#!/usr/bin/env bash
 shopt -s globstar
 if [[ ! -x bin ]]; then
 	echo "No executable. Did you compile it?"
@@ -58,7 +59,7 @@ for _ in range(n):
 	print(randint(1, 100))
 "
 
-xchecktemplate='#!/bin/bash
+xchecktemplate='#!/usr/bin/env bash
 while true; do
 	IN=`tests/gen.py $1`;
 	diff <(./bin <<< "$IN") <(./brute <<< "$IN")

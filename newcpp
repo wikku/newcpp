@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 newcpp() {
 	if [[ $# -ne 1 ]]; then
 		echo "Usage: newcpp NAME"
