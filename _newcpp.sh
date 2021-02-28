@@ -56,7 +56,7 @@ from random import choice, randint, randrange, choices, shuffle, random, uniform
 n = int(sys.argv[1])
 print(n)
 for _ in range(n):
-	print(randint(1, 100))
+    print(randint(1, 100))
 "
 
 xchecktemplate='#!/usr/bin/env bash
