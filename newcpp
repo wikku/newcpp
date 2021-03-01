@@ -4,8 +4,8 @@ newcpp() {
 		echo "Usage: newcpp NAME"
 		return 1
 	fi
-	if [[ "$1" == "run" || "$1" == "tests" || "$1" == "check" || "$1" == "bin" ]]; then
-		echo "NAME cannot be 'bin', 'check', 'run' or 'tests'."
+	if [[ "$1" == "run" || "$1" == "tests" || "$1" == "check" || "$1" == "bin" || "$1" == "" ]]; then
+		echo "NAME cannot be 'bin', 'check', 'run', 'tests', or ''."
 		return 1
 	fi
 	if [[ "$1" = *[[:space:]]* ]]; then
