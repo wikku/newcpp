@@ -8,6 +8,10 @@ newcpp() {
 		echo "NAME cannot be 'bin', 'check', 'run' or 'tests'."
 		return 1
 	fi
+	if [[ "$1" = *[[:space:]]* ]]; then
+		echo "NAME cannot contain whitespace."
+		return 1
+	fi
 	mkdir "$1"
 	cd "$1"
 	~/bin/_newcpp.sh $1
