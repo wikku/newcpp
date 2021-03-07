@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 filename="$1.cpp"
 editor="konsole -e vim"
-makefiletemplate="CXXFLAGS=-Wall -Wextra -Werror=format -Werror=return-type -Werror=uninitialized -fsanitize=undefined -g
+makefiletemplate="CXXFLAGS=-Wall -Wextra -Werror=format -Werror=return-type -Werror=uninitialized -g
+CXXFLAGS+=-fsanitize=undefined
 CXXFLAGS+=-O2
 CXXFLAGS+=-D_GLIBCXX_DEBUG
 
