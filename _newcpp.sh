@@ -61,9 +61,18 @@ for _ in range(n):
 "
 
 xchecktemplate='#!/usr/bin/env bash
+counter=0
 while true; do
 	IN=`tests/gen.py $1`;
-	diff <(./bin <<< "$IN") <(./brute <<< "$IN")
+	if ! diff <(./bin <<< "$IN") <(./brute <<< "$IN")
+	then
+	        echo "$IN"
+	fi
+	counter=$((counter+1))
+	if (( $counter % 10 == 0))
+	then
+	        echo "$counter cross tests passed"
+	fi
 done
 '
 
